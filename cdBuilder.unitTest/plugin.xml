@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="unitTestResultView Category"
+            id="cdBuilder.unitTest">
+      </category>
+      <view
+            allowMultiple="true"
+            category="cdBuilder.unitTest"
+            class="cdbuilder.unitTest.views.UnitTestView"
+            icon="icons/sample.gif"
+            id="cdbuilder.unitTest.views.unitTestResultView"
+            name="unitTestResultView"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="cdbuilder.unitTest.views.firstView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="This is the cd++ unit test."
+            id="cdBuilder.unitTest.menuButton"
+            label="Unit Test"
+            visible="true">
+         <menu
+               id="cdBuilder.unitTest.unitTestMenu"
+               label=" UnitTest"
+               path="additions">
+            <groupMarker
+                  name="content">
+            </groupMarker>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="cdbuilder.unitTest.simuAction"
+               id="cdBuilder.unitTest.firstView"
+               label="Run Unit Test"
+               menubarPath="cdBuilder.unitTest.unitTestMenu/content"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="open the  unit test view">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

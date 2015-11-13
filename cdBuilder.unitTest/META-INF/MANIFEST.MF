@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UnitTest
+Bundle-SymbolicName: cdBuilder.unitTest; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: cdbuilder.unitTest.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: DEVSModeler.diagram.part,
+ DEVSModeler.diagram.resources,
+ DEVSModeler.util,
+ cdBuilder,
+ cdBuilder.buttons,
+ cdBuilder.console,
+ cdBuilder.simulator,
+ cdbuilder.common,
+ org.eclipse.core.resources
